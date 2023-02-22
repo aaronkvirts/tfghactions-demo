@@ -9,7 +9,7 @@ terraform {
     organization = "virtuosity"
 
     workspaces {
-      name = "tfghactions-demo"
+      name = "testdev-demo"
     }
   }
 }
