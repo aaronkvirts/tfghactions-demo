@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
-    path: main-scripts/prod
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -30,12 +29,12 @@ jobs:
 
       - name: Terraform Apply
         run: terraform apply -auto-approve -input=false
+        working-directory: main-scripts/prod
   terraform-apply-dev:      
     name: "Terraform Apply - Dev"
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
-    path: main-scripts/dev
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -55,3 +54,4 @@ jobs:
 
       - name: Terraform Apply
         run: terraform apply -auto-approve -input=false
+        working-directory: main-scripts/dev
