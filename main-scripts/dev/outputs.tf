@@ -9,6 +9,6 @@ output "alicloud_vpc_id" {
 }
 
 output "alicloud_vswitch_id" {
-  value       = alicloud_vswitch.vswitch_prod.id
+  value       = alicloud_vswitch.vswitch_dev.id
   description = "vSwitch ID"
 }

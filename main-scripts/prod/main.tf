@@ -30,7 +30,7 @@ resource "alicloud_vpc" "vpc_prod" {
 }
 
 resource "alicloud_vswitch" "vswitch_prod" {
-  vpc_id       = alicloud_vpc.prod.id
+  vpc_id       = alicloud_vpc.vpc_prod.id
   cidr_block   = "172.16.1.0/24"
   zone_id      = "ap-southeast-3a"
   vswitch_name = "vswitch-demo"
