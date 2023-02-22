@@ -24,12 +24,12 @@ data "alicloud_images" "default" {
   owners      = "system"
 }
 
-resource "alicloud_vpc" "prod" {
+resource "alicloud_vpc" "vpc_dev" {
   vpc_name   = "VPC-Dev-Demo"
   cidr_block = "172.16.0.0/16"
 }
 
-resource "alicloud_vswitch" "vswitch" {
+resource "alicloud_vswitch" "vswitch_vpc" {
   vpc_id       = alicloud_vpc.prod.id
   cidr_block   = "172.16.1.0/24"
   zone_id      = "ap-southeast-3a"
@@ -42,10 +42,10 @@ resource "alicloud_vswitch" "vswitch" {
 resource "alicloud_security_group" "sec_group" {
   name        = "sec-group-demo"
   description = "foo"
-  vpc_id      = alicloud_vpc.prod.id
+  vpc_id      = alicloud_vpc.vpc_dev.id
 }
 
-resource "alicloud_instance" "ecs_instance" {
+resource "alicloud_instance" "ecs_instance_dev_1" {
 
   security_groups            = alicloud_security_group.sec_group.*.id
   instance_type              = "ecs.n4.large"
@@ -55,6 +55,6 @@ resource "alicloud_instance" "ecs_instance" {
   system_disk_size           = 40
   image_id                   = data.alicloud_images.default.images[0].id
   instance_name              = "ecs-instance-demo"
-  vswitch_id                 = alicloud_vswitch.vswitch.id
+  vswitch_id                 = alicloud_vswitch.vswitch_dev.id
   internet_max_bandwidth_out = 10
 }
