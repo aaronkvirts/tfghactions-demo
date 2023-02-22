@@ -22,10 +22,12 @@ jobs:
       - name: Terraform Init
         id: init
         run: terraform init
+        working-directory: main-scripts/prod
       
       - name: Terraform Validate
         id: validate
         run: terraform validate -no-color
+        working-directory: main-scripts/prod
 
       - name: Terraform Apply
         run: terraform apply -auto-approve -input=false
@@ -47,10 +49,12 @@ jobs:
       - name: Terraform Init
         id: init
         run: terraform init
+        working-directory: main-scripts/dev
       
       - name: Terraform Validate
         id: validate
         run: terraform validate -no-color
+        working-directory: main-scripts/dev
 
       - name: Terraform Apply
         run: terraform apply -auto-approve -input=false
