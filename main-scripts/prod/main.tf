@@ -35,7 +35,7 @@ resource "alicloud_vswitch" "vswitch_prod" {
   zone_id      = "ap-southeast-3a"
   vswitch_name = "vswitch-demo"
   depends_on = [
-    alicloud_vpc.prod
+    alicloud_vpc.vpc_prod
   ]
 }
 
