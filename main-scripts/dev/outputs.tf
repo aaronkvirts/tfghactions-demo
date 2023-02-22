@@ -4,7 +4,7 @@ output "alicloud_ecs_instance_id" {
 }
 
 output "alicloud_vpc_id" {
-  value       = alicloud_vpc.vpc_prod.id
+  value       = alicloud_vpc.vpc_dev.id
   description = "VPC ID"
 }
 
