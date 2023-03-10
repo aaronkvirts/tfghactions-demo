@@ -58,3 +58,17 @@ resource "alicloud_instance" "ecs_instance_dev_1" {
   vswitch_id                 = alicloud_vswitch.vswitch_dev.id
   internet_max_bandwidth_out = 10
 }
+
+resource "alicloud_instance" "ecs_instance_dev_2" {
+
+  security_groups            = alicloud_security_group.sec_group.*.id
+  instance_type              = "ecs.n4.large"
+  system_disk_category       = "cloud_efficiency"
+  system_disk_name           = "ecs-system-disk"
+  system_disk_description    = "System Disk for ECS"
+  system_disk_size           = 80
+  image_id                   = data.alicloud_images.default.images[0].id
+  instance_name              = "ecs-instance-demo"
+  vswitch_id                 = alicloud_vswitch.vswitch_dev.id
+  internet_max_bandwidth_out = 10
+}
