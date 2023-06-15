@@ -11,7 +11,6 @@ terraform {
     alicloud = {
       source  = "aliyun/alicloud"
       version = "1.205.0"
-
     }
   }
 }
@@ -29,4 +28,5 @@ module "ecs" {
   ecs_instance_name  = "Demo Test ECS Instance"
   ecs_vswitch_id     = "vsw-8psjrm8g2zfrhlkhmy0sm"
   ecs_security_group = "sg-8ps6mar1u7lwnb7kyr5i"
+  ecs_disk_size      = 40
 }

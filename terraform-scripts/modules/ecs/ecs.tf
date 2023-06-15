@@ -13,5 +13,5 @@ resource "alicloud_instance" "ecs_instance_nano" {
   image_id             = "aliyun_3_x64_20G_alibase_20230424.vhd"
   instance_name        = var.ecs_instance_name //"Aaron-test"
   vswitch_id           = var.ecs_vswitch_id    //"vsw-8psle91nr385rpxgyqi8p"
-  system_disk_size     = 40
+  system_disk_size     = var.ecs_disk_size
 }
