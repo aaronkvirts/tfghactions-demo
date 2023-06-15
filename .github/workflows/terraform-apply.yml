@@ -22,40 +22,13 @@ jobs:
       - name: Terraform Init
         id: init
         run: terraform init
-        working-directory: main-scripts/prod
+        working-directory: terraform-scripts/prod
       
       - name: Terraform Validate
         id: validate
         run: terraform validate -no-color
-        working-directory: main-scripts/prod
+        working-directory: terraform-scripts/prod
 
       - name: Terraform Apply
         run: terraform apply -auto-approve -input=false
-        working-directory: main-scripts/prod
-  terraform-apply-dev:      
-    name: "Terraform Apply - Dev"
-    runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v2
-        with:
-          cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
-
-      - name: Terraform Init
-        id: init
-        run: terraform init
-        working-directory: main-scripts/dev
-      
-      - name: Terraform Validate
-        id: validate
-        run: terraform validate -no-color
-        working-directory: main-scripts/dev
-
-      - name: Terraform Apply
-        run: terraform apply -auto-approve -input=false
-        working-directory: main-scripts/dev
+        working-directory: terraform-scripts/prod
