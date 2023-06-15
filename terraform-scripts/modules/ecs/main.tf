@@ -1,12 +1,3 @@
-variable "ALICLOUD_ACCESS_KEY" {}
-variable "ALICLOUD_SECRET_KEY" {}
-
-provider "alicloud" {
-  access_key = var.ALICLOUD_ACCESS_KEY
-  secret_key = var.ALICLOUD_SECRET_KEY
-  region     = var.region
-}
-
 resource "alicloud_instance" "ecs_instance_nano" {
   security_groups      = var.ecs_security_group //[ "sg-8ps2di45ns5shx56ro6a" ]
   instance_type        = "ecs.t5-lc2m1.nano"
