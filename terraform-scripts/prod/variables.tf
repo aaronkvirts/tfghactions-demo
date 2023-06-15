@@ -1,2 +1,0 @@
-variable "ALICLOUD_ACCESS_KEY" {}
-variable "ALICLOUD_SECRET_KEY" {}
