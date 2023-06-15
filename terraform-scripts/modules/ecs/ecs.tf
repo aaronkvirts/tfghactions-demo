@@ -1,3 +1,6 @@
+variable "ALICLOUD_ACCESS_KEY" {}
+variable "ALICLOUD_SECRET_KEY" {}
+
 provider "alicloud" {
   access_key = var.ALICLOUD_ACCESS_KEY
   secret_key = var.ALICLOUD_SECRET_KEY
