@@ -1,12 +1,12 @@
 variable "ecs_security_group" {
     type = list(string)
-    default = [ "sg-8ps2di45ns5shx56ro6a" ]
+    default = [ "sg-8psis5n91cq4i6zcqlb3" ]
     description = "Security Group ID"
 }
 
 variable "ecs_disk_name" {
     type = string
-    default = "Demo Test Disk"
+    default = "Demo-Test-Disk"
     description = "ECS Disk Name"
 }
 
@@ -18,7 +18,7 @@ variable "ecs_disk_size" {
 
 variable "ecs_instance_name" {
     type = string
-    default = "Demo Test ECS Instance"
+    default = "Demo-Test-ECS-Instance"
     description = "ECS Instance Name"
 }
 
