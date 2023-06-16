@@ -12,7 +12,7 @@ variable "ecs_disk_name" {
 
 variable "ecs_disk_size" {
     type = number
-    default = 40
+    default = 100
     description = "ECS Disk Size"
 }
 
