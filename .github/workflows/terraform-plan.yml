@@ -21,23 +21,23 @@ jobs:
       - name: Terraform Format
         id: fmt
         run: terraform fmt
-        working-directory: terraform-scripts/prod
+        working-directory: resource-groups/prod
 
       - name: Terraform Init
         id: init
         run: terraform init
-        working-directory: terraform-scripts/prod
+        working-directory: resource-groups/prod
       
       - name: Terraform Validate
         id: validate
         run: terraform validate -no-color
-        working-directory: terraform-scripts/prod
+        working-directory: resource-groups/prod
 
       - name: Terraform Plan
         id: plan
         if: github.event_name == 'pull_request'
         run: terraform plan -no-color -input=false
-        working-directory: terraform-scripts/prod
+        working-directory: resource-groups/prod
         continue-on-error: true
 
       - name: Update Pull Request

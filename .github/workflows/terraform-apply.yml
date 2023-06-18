@@ -22,16 +22,16 @@ jobs:
       - name: Terraform Init
         id: init
         run: terraform init
-        working-directory: terraform-scripts/prod
+        working-directory: resource-groups/prod
       
       - name: Terraform Validate
         id: validate
         run: terraform validate -no-color
-        working-directory: terraform-scripts/prod
+        working-directory: resource-groups/prod
 
       - name: Terraform Apply
         run: terraform apply -auto-approve -input=false
         env: 
           ALICLOUD_ACCESS_KEY: ${{ secrets.ALICLOUD_ACCESS_KEY }}
           ALICLOUD_SECRET_KEY: ${{ secrets.ALICLOUD_SECRET_KEY }}
-        working-directory: terraform-scripts/prod
+        working-directory: resource-groups/prod
