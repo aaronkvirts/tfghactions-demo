@@ -4,22 +4,10 @@ variable "ecs_security_group" {
     description = "Security Group ID"
 }
 
-variable "ecs_disk_name" {
-    type = string
-    default = "Demo-Test-Disk"
-    description = "ECS Disk Name"
-}
-
 variable "ecs_disk_size" {
     type = number
     default = 80
     description = "ECS Disk Size"
-}
-
-variable "ecs_instance_name" {
-    type = string
-    default = "Demo-Test-ECS-Instance"
-    description = "ECS Instance Name"
 }
 
 variable "ecs_vswitch_id" {
