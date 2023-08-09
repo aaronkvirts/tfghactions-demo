@@ -112,7 +112,7 @@ resource "alicloud_cs_managed_kubernetes" "ack_pro_cluster_instance_1" {
 
 resource "alicloud_cs_kubernetes_node_pool" "managed_nodepool_ack_instance_1" {
   name       = "Managed_nodepool_ACK_instance_1"
-  cluster_id = alicloud_cs_managed_kubernetes.ack_pro_cluster.id
+  cluster_id = alicloud_cs_managed_kubernetes.ack_pro_cluster_instance_1.id
 
   vswitch_ids = [
     "vsw-8psjrm8g2zfrhlkhmy0sm"
