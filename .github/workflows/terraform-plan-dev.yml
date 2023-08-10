@@ -4,6 +4,8 @@ on:
   pull_request:
     paths:
       - 'resource-groups/dev'
+    branches:
+      - main
 
 jobs:
   terraform-plan-dev:
