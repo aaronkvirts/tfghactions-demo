@@ -4,6 +4,8 @@ on:
   pull_request:
     paths:
       - 'resource-groups/prod'
+    branches:
+      - main
 
 jobs:
   terraform-plan-prod:
