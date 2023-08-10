@@ -136,7 +136,7 @@ resource "alicloud_cs_kubernetes_node_pool" "managed_nodepool_ack_instance_1" {
   runtime_name    = "containerd"
   runtime_version = "1.6.20"
 
-  instance_types       = ["ecs.c6.large"]
+  instance_types       = ["ecs.c6.xlarge"]
   instance_charge_type = "PostPaid"
 
   password = "Virtua/4u"
