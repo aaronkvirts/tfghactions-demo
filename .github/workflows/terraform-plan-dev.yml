@@ -3,9 +3,7 @@ name: "Terraform Plan - Dev"
 on:
   pull_request:
     paths:
-      - 'resource-groups/dev'
-    branches:
-      - main
+      - resource-groups/dev/**
 
 jobs:
   terraform-plan-dev:

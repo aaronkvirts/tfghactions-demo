@@ -10,7 +10,7 @@ terraform {
   required_providers {
     alicloud = {
       source  = "aliyun/alicloud"
-      version = "1.205.0"
+      version = "1.209.0"
     }
   }
 }
@@ -31,6 +31,7 @@ resource "alicloud_instance" "ecs_instance_1" {
   system_disk_size     = var.ecs_disk_size
 }
 
+/**
 resource "alicloud_kvstore_instance" "redis_dual_instance_1" {
   db_instance_name = "Redis-Dual-Instance-1"
   vswitch_id       = "vsw-8psjrm8g2zfrhlkhmy0sm"
@@ -53,7 +54,9 @@ resource "alicloud_kvstore_instance" "redis_dual_instance_1" {
   instance_class    = "redis.master.small.default"
   payment_type      = "PostPaid"
 }
+**/
 
+/**
 resource "alicloud_db_instance" "rds_ha_instance_1" {
   category                 = "HighAvailability"
   engine                   = "PostgreSQL"
@@ -72,7 +75,9 @@ resource "alicloud_db_instance" "rds_ha_instance_1" {
   zone_id_slave_a = "ap-southeast-3b"
   #monitoring_period = 5
 }
+**/
 
+/**
 resource "alicloud_cs_managed_kubernetes" "ack_pro_cluster_instance_1" {
   name              = "ACK_Pro_cluster_instance_1"
   cluster_spec      = "ack.pro.small"
@@ -109,7 +114,9 @@ resource "alicloud_cs_managed_kubernetes" "ack_pro_cluster_instance_1" {
     }
   }
 }
+**/
 
+/**
 resource "alicloud_cs_kubernetes_node_pool" "managed_nodepool_ack_instance_1" {
   name       = "Managed_nodepool_ACK_instance_1"
   cluster_id = alicloud_cs_managed_kubernetes.ack_pro_cluster_instance_1.id
@@ -123,7 +130,6 @@ resource "alicloud_cs_kubernetes_node_pool" "managed_nodepool_ack_instance_1" {
     min_size = 3
     max_size = 5
   }
-  **/
 
   desired_size = 3
 
@@ -153,8 +159,8 @@ resource "alicloud_cs_kubernetes_node_pool" "managed_nodepool_ack_instance_1" {
     category = "cloud_efficiency"
     size     = 20
   }
-  **/
 }
+**/
 
 /**
 resource "alicloud_cs_autoscaling_config" "ack_instance_1_autoscaling" {
