@@ -2,6 +2,8 @@ name: "Terraform Plan - Prod"
 
 on:
   pull_request:
+    paths:
+      - resource-groups/prod/**
 
 jobs:
   terraform-plan-prod:
