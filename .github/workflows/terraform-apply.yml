@@ -1,7 +1,7 @@
 name: "Terraform Apply"
 
 on:
-  release:
+  push:
     tags: 
       - prod-*
 
