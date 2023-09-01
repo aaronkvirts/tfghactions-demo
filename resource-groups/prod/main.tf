@@ -94,7 +94,7 @@ resource "alicloud_cs_managed_kubernetes" "ack_pro_cluster_instance_1" {
   pod_cidr             = "10.55.0.0/16"
   proxy_mode           = "ipvs"
   # Enable Ram Role for ServiceAccount
-  enable_rrsa = true
+  enable_rrsa = false
 
   deletion_protection = false
   # unit:day

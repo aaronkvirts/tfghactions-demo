@@ -3,6 +3,8 @@ name: "Terraform Apply"
 on:
   release:
     types: [created]
+    tags: 
+      - 'prod-*'
 
 jobs:
   terraform-apply-prod:
